@@ -30,6 +30,8 @@ public class Main {
                         System.out.println("Sendo "+controladorDaTransacao.Deposito.gaveta50.getQntDeCedulas()+" notas de 50");
                         System.out.println("Sendo "+controladorDaTransacao.Deposito.gaveta100.getQntDeCedulas()+" notas de 100");
                         System.out.println("==========================================================================");
+                        System.out.println("Pressione <ENTER> para voltar ao menu principal");
+                        reader.nextLine();
                     } else {
                         if (opcaoEscolhida == 4){
                             terminalAberto = false;

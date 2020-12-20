@@ -115,6 +115,8 @@ public class TerminalController extends TerminalOperator {
         System.out.println("=================================================");
         System.out.println("Transação efetuada com sucesso!");
         System.out.println("=================================================");
+        System.out.println("Voltando ao menu principal...");
+        reader.nextLine();
     }
 
     protected void OpcaoSaque() {
@@ -208,6 +210,8 @@ public class TerminalController extends TerminalOperator {
         int qtdDeNotas100 = 0;
         int valorParaSerSacado = valorDeSaque;
 
+        Scanner reader = new Scanner(System.in);
+
         boolean daPraDividir = true;
 
         //Fatora procurando qual a quantidade de cada célula para atender ao valor do saque
@@ -244,7 +248,7 @@ public class TerminalController extends TerminalOperator {
         //Imprime do valor solicitado quanto pode ser cobrido
 
         System.out.println("O Saque selecionado foi de " + valorDeSaque + " podemos sacar " + saldoDeSaqueContabilizado);
-        System.out.println("Será contabilizado um total de:");
+        System.out.println("Será necessário um total de:");
 
         //imprime quantidade de notas para o usuário
 
@@ -263,7 +267,6 @@ public class TerminalController extends TerminalOperator {
 
         //Permite a abertura da transação com o depósito do terminal
 
-        Scanner reader = new Scanner(System.in);
         boolean opcaoEscolhidaEhValida = false;
         char opc;
 
@@ -297,13 +300,11 @@ public class TerminalController extends TerminalOperator {
                         throw new InputMismatchException();
                 }
 
-                //Caso haja qualquer erro de Inputmismatch o sistema trata a exceção permitindo que o usuário possa inserir novo caractere
+            //Caso haja qualquer erro de Inputmismatch o sistema trata a exceção permitindo que o usuário possa inserir novo caractere
             } catch (InputMismatchException e) {
                 System.out.println("Por favor, digite 'S' ou 'N'");
                 reader.nextLine();
             }
         } while (!opcaoEscolhidaEhValida);
     }
-
-
 }
