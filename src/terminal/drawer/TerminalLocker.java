@@ -1,3 +1,5 @@
+package terminal.drawer;
+
 public class TerminalLocker {
     int valorDaCedula;
     int qntDeCedulas = 0;
@@ -6,11 +8,11 @@ public class TerminalLocker {
         this.valorDaCedula = valorDaCedula;
     }
 
-    protected int getQntDeCedulas() {
+    public int getQntDeCedulas() {
         return qntDeCedulas;
     }
 
-    protected void setQntDeCedulas(int qntDeCedulas) {
+    public void setQntDeCedulas(int qntDeCedulas) {
         this.qntDeCedulas = qntDeCedulas;
     }
 
