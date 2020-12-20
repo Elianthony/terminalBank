@@ -99,19 +99,47 @@ public class TerminalOperator {
      */
 
     private void saca10(TerminalDeposit Deposito, int qtdDeNotas) {
-        Deposito.gaveta10.setQntDeCedulas(Deposito.gaveta10.getQntDeCedulas() - qtdDeNotas);
+        if((Deposito.gaveta10.getQntDeCedulas() - qtdDeNotas) <= 0) {
+            System.out.println("Não há cédulas de 10 suficientes");
+        } else {
+            Deposito.gaveta10.setQntDeCedulas(Deposito.gaveta10.getQntDeCedulas() - qtdDeNotas);
+            System.out.println("=================================");
+            System.out.println("Saque das notas de 10 com sucesso!");
+            System.out.println("=================================");
+        }
     }
 
     private void saca20(TerminalDeposit Deposito, int qtdDeNotas) {
-        Deposito.gaveta20.setQntDeCedulas(Deposito.gaveta20.getQntDeCedulas() - qtdDeNotas);
+        if((Deposito.gaveta20.getQntDeCedulas() - qtdDeNotas) <= 0){
+            System.out.println("Não há cédulas de 20 suficientes");
+        }else {
+            Deposito.gaveta20.setQntDeCedulas(Deposito.gaveta20.getQntDeCedulas() - qtdDeNotas);
+            System.out.println("=================================");
+            System.out.println("Saque das notas de 20 com sucesso!");
+            System.out.println("=================================");
+        }
     }
 
     private void saca50(TerminalDeposit Deposito, int qtdDeNotas) {
-        Deposito.gaveta50.setQntDeCedulas(Deposito.gaveta50.getQntDeCedulas() - qtdDeNotas);
+        if((Deposito.gaveta50.getQntDeCedulas() - qtdDeNotas) <= 0){
+            System.out.println("Não há cédulas de 50 suficientes");
+        }else {
+            Deposito.gaveta50.setQntDeCedulas(Deposito.gaveta50.getQntDeCedulas() - qtdDeNotas);
+            System.out.println("=================================");
+            System.out.println("Saque das notas de 50 com sucesso!");
+            System.out.println("=================================");
+        }
     }
 
     private void saca100(TerminalDeposit Deposito, int qtdDeNotas) {
-        Deposito.gaveta100.setQntDeCedulas(Deposito.gaveta100.getQntDeCedulas() - qtdDeNotas);
+        if((Deposito.gaveta100.getQntDeCedulas() - qtdDeNotas) <= 0){
+            System.out.println("Não há cédulas de 100 suficientes");
+        }else {
+            Deposito.gaveta100.setQntDeCedulas(Deposito.gaveta100.getQntDeCedulas() - qtdDeNotas);
+            System.out.println("=================================");
+            System.out.println("Saque das notas de 100 com sucesso!");
+            System.out.println("=================================");
+        }
     }
 
 

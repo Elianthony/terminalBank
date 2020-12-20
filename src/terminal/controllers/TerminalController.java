@@ -65,8 +65,8 @@ public class TerminalController extends TerminalOperator {
                             qtdDeNotas20 = fatoraQtdDeNotas(valorParaSerSacado, 20);
                             valorParaSerSacado = subtraiCedulasJaProcessadas(qtdDeNotas20, 20, valorParaSerSacado);
                         } else {
-                                qtdDeNotas10 = fatoraQtdDeNotas(valorParaSerSacado, 10);
-                                valorParaSerSacado = subtraiCedulasJaProcessadas(qtdDeNotas10, 10, valorParaSerSacado);
+                            qtdDeNotas10 = fatoraQtdDeNotas(valorParaSerSacado, 10);
+                            valorParaSerSacado = subtraiCedulasJaProcessadas(qtdDeNotas10, 10, valorParaSerSacado);
                         }
                     }
                 }
@@ -78,22 +78,25 @@ public class TerminalController extends TerminalOperator {
 
         //Totaliza o resultado final do saque que foi contabilizado
 
-        int saldoDeSaqueContabilizado = (qtdDeNotas100 * 100)+(qtdDeNotas50*50)+(qtdDeNotas20*20)+(qtdDeNotas10*10);
+        int saldoDeSaqueContabilizado = (qtdDeNotas100 * 100) + (qtdDeNotas50 * 50) + (qtdDeNotas20 * 20) + (qtdDeNotas10 * 10);
 
         //Imprime do valor solicitado quanto pode ser cobrido
 
-        System.out.println("O Saque selecionado foi de "+valorDeSaque+ " podemos sacar "+saldoDeSaqueContabilizado);
+        System.out.println("O Saque selecionado foi de " + valorDeSaque + " podemos sacar " + saldoDeSaqueContabilizado);
         System.out.println("Será contabilizado um total de:");
 
         //imprime quantidade de notas para o usuário
 
-        if(qtdDeNotas10 > 0) {
+        if (qtdDeNotas10 > 0) {
             System.out.println(qtdDeNotas10 + " notas de 10");
-        } if (qtdDeNotas20 > 0) {
+        }
+        if (qtdDeNotas20 > 0) {
             System.out.println(qtdDeNotas20 + " notas de 20");
-        } if (qtdDeNotas50 > 0) {
+        }
+        if (qtdDeNotas50 > 0) {
             System.out.println(qtdDeNotas50 + " notas de 50");
-        } if (qtdDeNotas100 > 0) {
+        }
+        if (qtdDeNotas100 > 0) {
             System.out.println(qtdDeNotas100 + " notas de 100");
         }
 
@@ -104,41 +107,40 @@ public class TerminalController extends TerminalOperator {
         char opc;
 
         System.out.println("Deseja concluir a transação? [S/N]");
-        do{
-            try{
+        do {
+            try {
                 opc = reader.next().charAt(0);
                 //O sistema garante que a entrada seja ou "S" ou "N"
-                switch (opc){
+                switch (opc) {
                     case 'S':
 
                         //Opera a transação se a quantidade de cédulas calculada for maior que "0"(zero)
-                        if(qtdDeNotas10 > 0) {
-                            operaSaque(Deposito, 10,qtdDeNotas10);
-                        } if (qtdDeNotas20 > 0) {
-                        operaSaque(Deposito, 20,qtdDeNotas20);
-                        } if (qtdDeNotas50 > 0) {
-                        operaSaque(Deposito, 50,qtdDeNotas50);
-                        } if (qtdDeNotas100 > 0) {
-                        operaSaque(Deposito, 100,qtdDeNotas100);
+                        if (qtdDeNotas10 > 0) {
+                            operaSaque(Deposito, 10, qtdDeNotas10);
                         }
-                        System.out.println("=================================");
-                        System.out.println("Saque realizado com sucesso!");
-                        System.out.println("=================================");
-
-                        opcaoEscolhidaEhValida =true;
+                        if (qtdDeNotas20 > 0) {
+                            operaSaque(Deposito, 20, qtdDeNotas20);
+                        }
+                        if (qtdDeNotas50 > 0) {
+                            operaSaque(Deposito, 50, qtdDeNotas50);
+                        }
+                        if (qtdDeNotas100 > 0) {
+                            operaSaque(Deposito, 100, qtdDeNotas100);
+                        }
+                        opcaoEscolhidaEhValida = true;
                         break;
                     case 'N':
-                        opcaoEscolhidaEhValida =true;
+                        opcaoEscolhidaEhValida = true;
                         break;
                     default:
                         throw new InputMismatchException();
                 }
 
                 //Caso haja qualquer erro de Inputmismatch o sistema trata a exceção permitindo que o usuário possa inserir novo caractere
-            }catch(InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("Por favor, digite 'S' ou 'N'");
                 reader.nextLine();
             }
-        }while(!opcaoEscolhidaEhValida);
+        } while (!opcaoEscolhidaEhValida);
     }
 }

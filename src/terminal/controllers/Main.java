@@ -12,11 +12,12 @@ public class Main {
         int opcaoEscolhida;
         boolean terminalAberto = true;
 
-        opcaoEscolhida = executaMenuERetornaOpcao(controladorDaTransacao);
 
-        //Começa a operação Avaliando se o usuário quer depositar(1), sacar(2) ou verificar total de cédulas no terminal(3)
+
+        //Começa a operação Avaliando se o usuário quer depositar(1), sacar(2), verificar total de cédulas no terminal(3) ou sair(4)
 
         while (terminalAberto){
+            opcaoEscolhida = executaMenuERetornaOpcao(controladorDaTransacao);
             if(opcaoEscolhida == 1){
                 OpcaoDeposito(controladorDaTransacao);
             } else {
@@ -38,9 +39,7 @@ public class Main {
                     }
                 }
             }
-            opcaoEscolhida = executaMenuERetornaOpcao(controladorDaTransacao);
         }
-
 
     }
 
@@ -61,6 +60,7 @@ public class Main {
         System.out.println("1: Depósito");
         System.out.println("2: Saque");
         System.out.println("3: Verificar saldo de cédulas no terminal");
+        System.out.println("4: Sair");
 
         boolean opcaoEscolhidaEhValida = false;
 
@@ -76,6 +76,9 @@ public class Main {
                         opcaoEscolhidaEhValida = true;
                         break;
                     case 3:
+                        opcaoEscolhidaEhValida = true;
+                        break;
+                    case 4:
                         opcaoEscolhidaEhValida = true;
                         break;
                     default:
@@ -131,7 +134,7 @@ public class Main {
                         throw new InputMismatchException();
                 }
 
-                //Caso haja qualquer erro de mismatch o sistema trata a exceção permitindo que o usuário possa inserir novo valor
+            //Caso haja qualquer erro de mismatch o sistema trata a exceção permitindo que o usuário possa inserir novo valor
             }catch(InputMismatchException e){
                 System.out.println("=================================================================");
                 System.out.println("**Por favor digite apenas notas que o sistema comporta!**");
@@ -158,8 +161,7 @@ public class Main {
                     opcaoEscolhidaEhValida = true;
                 }
 
-                //Caso haja qualquer erro de Inputmismatch o sistema trata a exceção permitindo que o usuário possa inserir novo valor
-
+            //Caso haja qualquer erro de Inputmismatch o sistema trata a exceção permitindo que o usuário possa inserir novo valor
             }catch(InputMismatchException e){
                 System.out.println("=================================================");
                 System.out.println("**Por favor digite apenas valores válidos!**");
